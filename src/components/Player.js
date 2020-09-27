@@ -1,5 +1,5 @@
 import React from 'react';
-import TrackDisplay from './TrackDisplay';
+import TrackDisplay from '../tracks/TrackDisplay';
 import Playlist from './Playlist';
 
 const Player = () => {

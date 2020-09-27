@@ -1,7 +1,7 @@
 import React from 'react';
 import StyledTrackDisplay from '../styles/TrackDisplayStyles';
-import AlbumCover from './AlbumCover';
-import PlayerControls from './PlayerControls';
+import AlbumCover from '../components/AlbumCover';
+import PlayerControls from '../components/PlayerControls';
 
 const TrackDisplay = () => {
   return (
