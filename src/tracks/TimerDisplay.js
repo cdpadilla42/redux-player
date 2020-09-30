@@ -1,13 +1,13 @@
 import React from 'react';
 import StyledTrackDisplay from '../styles/TrackDisplayStyles';
-import AlbumCover from '../components/AlbumCover';
-import PlayerControls from '../components/PlayerControls';
+import PlayButton from '../components/PlayButton';
+import Timer from '../components/Timer';
 
 const TrackDisplay = () => {
   return (
     <StyledTrackDisplay>
-      <AlbumCover />
-      <PlayerControls />
+      <PlayButton />
+      <Timer />
     </StyledTrackDisplay>
   );
 };

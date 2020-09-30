@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import TrackDisplay from '../tracks/TrackDisplay';
+import TimerDisplay from '../tracks/TimerDisplay';
 import Playlist from './Playlist';
 import { getTracks } from '../tracks/actions';
 
-// TODO Bring in action creator to run on component mount to get the data
+// TODO: Refactor to be a practice companion - todo list with a timer
 
 const Player = ({ getTracks }) => {
   useEffect(() => {
@@ -16,7 +16,7 @@ const Player = ({ getTracks }) => {
   return (
     <div className="player">
       <button onClick={getTracks}>Hey</button>
-      <TrackDisplay />
+      <TimerDisplay />
       <Playlist />
     </div>
   );
