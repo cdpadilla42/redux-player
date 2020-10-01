@@ -1,6 +1,6 @@
 import { GET_TRACKS, TOGGLE_PLAY } from './actions';
 
-const defaultState = { tracks: [], playing: false };
+const defaultState = { tracks: [], playing: false, time: 60 };
 
 const reducer = (state = defaultState, { type }) => {
   switch (type) {

@@ -1,7 +1,7 @@
 import React from 'react';
 import StyledTrackDisplay from '../styles/TrackDisplayStyles';
 import PlayButton from '../components/PlayButton';
-import Timer from '../components/Timer';
+import Timer from '../timer/Timer';
 
 const TrackDisplay = () => {
   return (
