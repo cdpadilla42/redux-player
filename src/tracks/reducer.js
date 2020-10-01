@@ -1,13 +1,11 @@
-import { GET_TRACKS, TOGGLE_PLAY } from './actions';
+import { GET_TRACKS } from './actions';
 
-const defaultState = { tracks: [], playing: false, time: 60 };
+const defaultState = { tracks: [] };
 
 const reducer = (state = defaultState, { type }) => {
   switch (type) {
     case GET_TRACKS:
       return { ...state, tracks: ['got'] };
-    case TOGGLE_PLAY:
-      return { ...state, playing: !state.playing };
     default:
       return state;
   }

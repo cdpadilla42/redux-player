@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { togglePlay } from '../tracks/actions';
+import { togglePlay } from '../timer/actions';
 
 const PlayButton = ({ togglePlay, playing }) => {
   return (
@@ -13,7 +13,7 @@ const PlayButton = ({ togglePlay, playing }) => {
 
 function mapStateToProps(state) {
   return {
-    playing: state.tracks.playing,
+    playing: state.timer.playing,
   };
 }
 
