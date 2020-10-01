@@ -4,30 +4,9 @@ import { connect } from 'react-redux';
 import { elapseTime } from './actions';
 
 const Timer = ({ elapseTime, time }) => {
-  // const [time, setTime] = useState(60);
-  const [intervalID, setIntervalID] = useState(null);
-  // const ellapseTime = () => {
-  //   console.log(time);
-  //   setTime((time) => time - 1);
-  // };
-
-  const runTime = () => {
-    console.log('starting');
-    setIntervalID(setInterval(elapseTime, 1000));
-    console.log(intervalID);
-  };
-
-  const pauseTime = () => {
-    console.log('stopping', intervalID);
-    clearInterval(intervalID);
-  };
-
   return (
     <>
-      <div className="player_controls" onClick={runTime}>
-        {time}
-      </div>
-      <div onClick={pauseTime}>Pause</div>
+      <div className="player_controls">{time}</div>
     </>
   );
 };
