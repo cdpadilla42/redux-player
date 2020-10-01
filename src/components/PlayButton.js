@@ -6,7 +6,7 @@ import { togglePlay } from '../tracks/actions';
 const PlayButton = ({ togglePlay, playing }) => {
   return (
     <div className="album_cover" onClick={togglePlay}>
-      {playing ? '▶️' : '👌'}
+      {playing ? '👌' : '▶️'}
     </div>
   );
 };
