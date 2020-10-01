@@ -1,11 +1,29 @@
 import { GET_TRACKS } from './actions';
 
-const defaultState = { tracks: [] };
+const defaultState = {
+  tasks: [
+    {
+      name: 'Song Touch Up',
+      time: 600,
+      completed: false,
+    },
+    {
+      name: 'Scales',
+      time: 120,
+      completed: false,
+    },
+    {
+      name: 'Hammer Ons',
+      completed: false,
+      time: 120,
+    },
+  ],
+};
 
 const reducer = (state = defaultState, { type }) => {
   switch (type) {
     case GET_TRACKS:
-      return { ...state, tracks: ['got'] };
+      return { ...state, tasks: ['got'] };
     default:
       return state;
   }

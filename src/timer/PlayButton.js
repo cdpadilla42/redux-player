@@ -7,14 +7,11 @@ const PlayButton = ({ elapseTime, togglePlay, playing }) => {
   const [intervalID, setIntervalID] = useState(null);
 
   const runTime = () => {
-    console.log('starting');
     setIntervalID(setInterval(elapseTime, 1000));
-    console.log(intervalID);
     togglePlay();
   };
 
   const pauseTime = () => {
-    console.log('stopping', intervalID);
     clearInterval(intervalID);
     togglePlay();
   };
