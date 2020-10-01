@@ -18,6 +18,7 @@ const defaultState = {
       time: 120,
     },
   ],
+  currentTask: 0,
 };
 
 const reducer = (state = defaultState, { type }) => {

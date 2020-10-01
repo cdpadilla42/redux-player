@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { elapseTime } from './actions';
+import { convertTime } from '../library';
 
 const Timer = ({ elapseTime, time }) => {
   return (
     <>
-      <div className="player_controls">{time}</div>
+      <div className="player_controls">{convertTime(time)}</div>
     </>
   );
 };
