@@ -2,9 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { convertTime } from '../library';
-import { nextTrack } from './actions';
+import { nextTrack, toggleTrackComplete } from './actions';
 
-const Playlist = ({ tracks, currentTrack, nextTrack }) => {
+const Playlist = ({ tracks, currentTrack, toggleTrackComplete }) => {
   function renderTasks() {
     return tracks.map((task, i) => {
       if (currentTrack === i) console.log('current task', task);
@@ -17,7 +17,9 @@ const Playlist = ({ tracks, currentTrack, nextTrack }) => {
 
       return (
         <tr style={currentTrack === i ? stylecurrentTrack() : null}>
-          <td>{task.completed ? <span>✅</span> : <span>⭕️</span>}</td>
+          <td onClick={() => toggleTrackComplete(i)}>
+            {task.completed ? <span>✅</span> : <span>⭕️</span>}
+          </td>
           <td>{i + 1}.</td>
           <td>{task.name}</td>
           <td>{convertTime(task.time)}</td>
@@ -41,7 +43,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ nextTrack }, dispatch);
+  return bindActionCreators({ nextTrack, toggleTrackComplete }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Playlist);

@@ -1,4 +1,4 @@
-import { GET_TRACKS, NEXT_TRACK, MARK_TRACK_COMPLETE } from './actions';
+import { GET_TRACKS, NEXT_TRACK, TOGGLE_TRACK_COMPLETE } from './actions';
 
 const defaultState = {
   tracks: [
@@ -27,9 +27,10 @@ const reducer = (state = defaultState, { type, data }) => {
       return { ...state, tasks: ['got'] };
     case NEXT_TRACK:
       return { ...state, currentTrack: state.currentTrack + 1 };
-    case MARK_TRACK_COMPLETE:
-      const tracks = [...state.tasks];
-      tracks[data.track].completed = true;
+    case TOGGLE_TRACK_COMPLETE:
+      console.log(data.tracks);
+      const tracks = [...state.tracks];
+      tracks[data.track].completed = !state.tracks[data.track].completed;
       return { ...state, tracks };
     default:
       return state;
