@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { elapseTime } from './actions';
+import { elapseTime } from '../tracks/actions';
 import { convertTime } from '../library';
 
-const Timer = ({ elapseTime, time }) => {
+const Timer = ({ currentTrack, time }) => {
   return (
     <>
+      <div className="current-track">{currentTrack}</div>
       <div className="player_controls">{convertTime(time)}</div>
     </>
   );
@@ -14,7 +15,8 @@ const Timer = ({ elapseTime, time }) => {
 
 function mapStateToProps(state) {
   return {
-    time: state.timer.time,
+    time: state.tracks.tracks[state.tracks.currentTrack].remainingTime,
+    currentTrack: state.tracks.currentTrack,
   };
 }
 

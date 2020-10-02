@@ -4,8 +4,8 @@ const defaultState = { time: 60, playing: false };
 
 const reducer = (state = defaultState, { type, data }) => {
   switch (type) {
-    case ELAPSE_TIME:
-      return { ...state, time: state.time - 1 };
+    // case ELAPSE_TIME:
+    //   return { ...state, time: state.time - 1 };
     case TOGGLE_PLAY:
       return { ...state, playing: !state.playing };
     case GET_TRACK:

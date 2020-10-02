@@ -1,6 +1,7 @@
 export const GET_TRACKS = 'GET_TRACKS';
 export const NEXT_TRACK = 'NEXT_TRACK';
 export const TOGGLE_TRACK_COMPLETE = 'TOGGLE_TRACK_COMPLETE';
+export const ELAPSE_TIME = 'ELAPSE_TIME';
 
 export function getTracks() {
   return {
@@ -18,5 +19,11 @@ export function toggleTrackComplete(track) {
   return {
     type: TOGGLE_TRACK_COMPLETE,
     data: { track },
+  };
+}
+
+export function elapseTime() {
+  return {
+    type: ELAPSE_TIME,
   };
 }

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { togglePlay, elapseTime } from './actions';
-import { nextTrack } from '../tracks/actions';
+import { togglePlay } from './actions';
+import { nextTrack, elapseTime } from '../tracks/actions';
 
 const PlayButton = ({ elapseTime, togglePlay, playing, nextTrack }) => {
   const [intervalID, setIntervalID] = useState(null);
