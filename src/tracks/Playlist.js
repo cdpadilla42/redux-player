@@ -4,19 +4,19 @@ import { bindActionCreators } from 'redux';
 import { convertTime } from '../library';
 import { nextTrack } from './actions';
 
-const Playlist = ({ tasks, currentTask, nextTrack }) => {
+const Playlist = ({ tracks, currentTrack, nextTrack }) => {
   function renderTasks() {
-    return tasks.map((task, i) => {
-      if (currentTask === i) console.log('current task', task);
+    return tracks.map((task, i) => {
+      if (currentTrack === i) console.log('current task', task);
 
-      function styleCurrentTask() {
+      function stylecurrentTrack() {
         return {
           color: 'green',
         };
       }
 
       return (
-        <tr style={currentTask === i ? styleCurrentTask() : null}>
+        <tr style={currentTrack === i ? stylecurrentTrack() : null}>
           <td>{task.completed ? <span>✅</span> : <span>⭕️</span>}</td>
           <td>{i + 1}.</td>
           <td>{task.name}</td>
@@ -35,8 +35,8 @@ const Playlist = ({ tasks, currentTask, nextTrack }) => {
 
 function mapStateToProps(state) {
   return {
-    tasks: state.tracks.tasks,
-    currentTask: state.tracks.currentTask,
+    tracks: state.tracks.tracks,
+    currentTrack: state.tracks.currentTrack,
   };
 }
 

@@ -1,7 +1,7 @@
-import { GET_TRACKS, NEXT_TRACK } from './actions';
+import { GET_TRACKS, NEXT_TRACK, MARK_TRACK_COMPLETE } from './actions';
 
 const defaultState = {
-  tasks: [
+  tracks: [
     {
       name: 'Song Touch Up',
       time: 600,
@@ -18,15 +18,19 @@ const defaultState = {
       time: 120,
     },
   ],
-  currentTask: 0,
+  currentTrack: 0,
 };
 
-const reducer = (state = defaultState, { type }) => {
+const reducer = (state = defaultState, { type, data }) => {
   switch (type) {
     case GET_TRACKS:
       return { ...state, tasks: ['got'] };
     case NEXT_TRACK:
-      return { ...state, currentTask: state.currentTask + 1 };
+      return { ...state, currentTrack: state.currentTrack + 1 };
+    case MARK_TRACK_COMPLETE:
+      const tracks = [...state.tasks];
+      tracks[data.track].completed = true;
+      return { ...state, tracks };
     default:
       return state;
   }
