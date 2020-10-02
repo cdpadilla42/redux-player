@@ -2,8 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { convertTime } from '../library';
+import { nextTrack } from './actions';
 
-const Playlist = ({ tasks, currentTask }) => {
+const Playlist = ({ tasks, currentTask, nextTrack }) => {
   function renderTasks() {
     return tasks.map((task, i) => {
       if (currentTask === i) console.log('current task', task);
@@ -39,8 +40,8 @@ function mapStateToProps(state) {
   };
 }
 
-// function mapDispatchToProps(dispatch) {
-//   return bindActionCreators({}, dispatch)
-// }
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ nextTrack }, dispatch);
+}
 
-export default connect(mapStateToProps)(Playlist);
+export default connect(mapStateToProps, mapDispatchToProps)(Playlist);

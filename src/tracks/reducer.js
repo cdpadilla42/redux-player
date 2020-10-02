@@ -1,4 +1,4 @@
-import { GET_TRACKS } from './actions';
+import { GET_TRACKS, NEXT_TRACK } from './actions';
 
 const defaultState = {
   tasks: [
@@ -25,6 +25,8 @@ const reducer = (state = defaultState, { type }) => {
   switch (type) {
     case GET_TRACKS:
       return { ...state, tasks: ['got'] };
+    case NEXT_TRACK:
+      return { ...state, currentTask: state.currentTask + 1 };
     default:
       return state;
   }

@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { togglePlay, elapseTime } from './actions';
+import { nextTrack } from '../tracks/actions';
 
-const PlayButton = ({ elapseTime, togglePlay, playing }) => {
+const PlayButton = ({ elapseTime, togglePlay, playing, nextTrack }) => {
   const [intervalID, setIntervalID] = useState(null);
 
   const runTime = () => {
@@ -17,12 +18,15 @@ const PlayButton = ({ elapseTime, togglePlay, playing }) => {
   };
 
   return (
-    <div className="album_cover">
+    <div className="controls">
+      {/* play/pause Button */}
       {playing ? (
         <button onClick={pauseTime}>👌</button>
       ) : (
         <button onClick={runTime}>▶️</button>
       )}
+      {/* Next Button */}
+      <button onClick={nextTrack}>⏩</button>
     </div>
   );
 };
@@ -34,7 +38,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispathToProps(dispatch) {
-  return bindActionCreators({ togglePlay, elapseTime }, dispatch);
+  return bindActionCreators({ togglePlay, elapseTime, nextTrack }, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispathToProps)(PlayButton);
