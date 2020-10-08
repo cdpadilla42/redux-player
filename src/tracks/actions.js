@@ -1,5 +1,6 @@
 export const GET_TRACKS = 'GET_TRACKS';
 export const NEXT_TRACK = 'NEXT_TRACK';
+export const PREV_TRACK = 'PREV_TRACK';
 export const TOGGLE_TRACK_COMPLETE = 'TOGGLE_TRACK_COMPLETE';
 export const ELAPSE_TIME = 'ELAPSE_TIME';
 
@@ -12,6 +13,12 @@ export function getTracks() {
 export function nextTrack() {
   return {
     type: NEXT_TRACK,
+  };
+}
+
+export function prevTrack() {
+  return {
+    type: PREV_TRACK,
   };
 }
 
