@@ -30,12 +30,19 @@ const defaultState = {
       time: 2,
       remainingTime: 2,
     },
+    {
+      name: 'Hammer Ons',
+      completed: false,
+      time: 2,
+      remainingTime: 2,
+    },
   ],
   currentTrack: 0,
 };
 
 const reducer = (state = defaultState, { type, data }) => {
   const tracks = [...state.tracks];
+  let currentTrack = state.currentTrack;
   switch (type) {
     case GET_TRACKS:
       return { ...state, tasks: ['got'] };
@@ -57,9 +64,10 @@ const reducer = (state = defaultState, { type, data }) => {
       // if new time is 0, change completed state
       if (tracks[state.currentTrack].remainingTime === 0) {
         tracks[state.currentTrack].completed = true;
+        currentTrack = currentTrack + 1;
       }
 
-      return { ...state, tracks };
+      return { ...state, tracks, currentTrack };
     default:
       return state;
   }

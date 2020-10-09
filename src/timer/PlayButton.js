@@ -16,29 +16,11 @@ const PlayButton = ({
   currentTrack,
   tracks,
 }) => {
-  const [intervalID, setIntervalID] = useState(null);
-
-  // TODO DEBUG the switching between play and stop
-  // try stripping out the play button component into it's own  component that runs time when the playing button is displayed and then discards on unmount using the eventHook
-
-  // const interval = () => {
-  //   if (tracks[currentTrack].remainingTime !== 0) {
-  //     elapseTime();
-  //     console.log('remaining time', tracks[currentTrack].remainingTime);
-  //   } else {
-  //     pauseTime();
-  //   }
-  // };
-
   const pauseTime = () => {
-    // console.log(intervalID);
-    // clearInterval(intervalID);
     togglePlay();
   };
 
   const runTime = () => {
-    // const id = setInterval(interval, 1000);
-    // setIntervalID(id);
     togglePlay();
   };
 
