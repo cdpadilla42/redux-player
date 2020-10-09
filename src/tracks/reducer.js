@@ -43,13 +43,33 @@ const defaultState = {
 const reducer = (state = defaultState, { type, data }) => {
   const tracks = [...state.tracks];
   let currentTrack = state.currentTrack;
+
+  function safeNextTrack() {
+    if (tracks.length - 1 === currentTrack) {
+      currentTrack = 0;
+    } else {
+      currentTrack = state.currentTrack + 1;
+    }
+  }
+
+  function safePrevTrack() {
+    if (currentTrack === 0) {
+      currentTrack = tracks.length - 1;
+    } else {
+      currentTrack = state.currentTrack - 1;
+    }
+  }
+
   switch (type) {
     case GET_TRACKS:
       return { ...state, tasks: ['got'] };
     case NEXT_TRACK:
-      return { ...state, currentTrack: state.currentTrack + 1 };
+      safeNextTrack();
+      return { ...state, currentTrack };
+
     case PREV_TRACK:
-      return { ...state, currentTrack: state.currentTrack - 1 };
+      safePrevTrack();
+      return { ...state, currentTrack };
     case TOGGLE_TRACK_COMPLETE:
       tracks[data.track].completed = !state.tracks[data.track].completed;
       return { ...state, tracks };
@@ -64,7 +84,7 @@ const reducer = (state = defaultState, { type, data }) => {
       // if new time is 0, change completed state
       if (tracks[state.currentTrack].remainingTime === 0) {
         tracks[state.currentTrack].completed = true;
-        currentTrack = currentTrack + 1;
+        safeNextTrack();
       }
 
       return { ...state, tracks, currentTrack };
