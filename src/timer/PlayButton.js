@@ -24,10 +24,20 @@ const PlayButton = ({
     togglePlay();
   };
 
+  const handleNextButton = () => {
+    if (playing) togglePlay();
+    nextTrack();
+  };
+
+  const handlePrevButton = () => {
+    if (playing) togglePlay();
+    prevTrack();
+  };
+
   return (
     <div className="controls">
       {/* Prev Button */}
-      <button onClick={prevTrack}>⏪</button>
+      <button onClick={handlePrevButton}>⏪</button>
       {/* play/pause Button */}
       {playing ? (
         <PauseButton pauseTime={pauseTime} />
@@ -35,7 +45,7 @@ const PlayButton = ({
         <button onClick={runTime}>▶️</button>
       )}
       {/* Next Button */}
-      <button onClick={nextTrack}>⏩</button>
+      <button onClick={handleNextButton}>⏩</button>
     </div>
   );
 };
