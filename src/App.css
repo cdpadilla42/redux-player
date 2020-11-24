@@ -14,7 +14,9 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-image: url(https://unsplash.it/1500/1000?image=1021);
+  background-size: cover;
+
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,6 +24,29 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.player {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  border-radius: 10px;
+  width: 400px;
+}
+
+table {
+  width: 100%;
+}
+
+tr {
+  display: flex;
+}
+
+tr td:nth-child(2) {
+  margin: 0 0.5rem;
+}
+
+tr td:nth-child(3) {
+  flex: 1;
 }
 
 .App-link {
