@@ -13,10 +13,10 @@ import { togglePlay } from '../timer/actions';
 const defaultState = {
   tracks: [
     {
-      name: 'Song Work',
-      time: 600,
-      remainingTime: 600,
+      name: 'Long Tones',
       completed: false,
+      time: 300,
+      remainingTime: 300,
     },
     {
       name: 'Scales',
@@ -25,13 +25,13 @@ const defaultState = {
       completed: false,
     },
     {
-      name: 'Improv',
+      name: 'Song Work',
+      time: 600,
+      remainingTime: 600,
       completed: false,
-      time: 300,
-      remainingTime: 300,
     },
     {
-      name: 'Hammer Ons',
+      name: 'Improv',
       completed: false,
       time: 300,
       remainingTime: 300,
