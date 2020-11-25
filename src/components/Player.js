@@ -15,7 +15,6 @@ const Player = ({ getTracks }) => {
   // size 490 x 300
   return (
     <div className="player">
-      <button onClick={getTracks}>Hey</button>
       <TimerDisplay />
       <Playlist />
     </div>

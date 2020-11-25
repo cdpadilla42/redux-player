@@ -7,7 +7,7 @@ import { convertTime } from '../library';
 const Timer = ({ currentTrack, time }) => {
   return (
     <>
-      <div className="current-track">{currentTrack}</div>
+      {/* <div className="current-track">{currentTrack}</div> */}
       <div className="player_controls">{convertTime(time)}</div>
     </>
   );

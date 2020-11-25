@@ -13,7 +13,7 @@ import { togglePlay } from '../timer/actions';
 const defaultState = {
   tracks: [
     {
-      name: 'Song Touch Up',
+      name: 'Song Work',
       time: 600,
       remainingTime: 600,
       completed: false,
@@ -25,16 +25,16 @@ const defaultState = {
       completed: false,
     },
     {
-      name: 'Hammer Ons',
+      name: 'Improv',
       completed: false,
-      time: 2,
-      remainingTime: 2,
+      time: 300,
+      remainingTime: 300,
     },
     {
       name: 'Hammer Ons',
       completed: false,
-      time: 2,
-      remainingTime: 2,
+      time: 300,
+      remainingTime: 300,
     },
   ],
   currentTrack: 0,

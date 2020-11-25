@@ -11,7 +11,8 @@ const Playlist = ({ tracks, currentTrack, toggleTrackComplete }) => {
 
       function stylecurrentTrack() {
         return {
-          color: 'green',
+          color: 'white',
+          textShadow: '1px 1px 3px black',
         };
       }
 
